@@ -23,7 +23,14 @@ int main(){
     #pragma omp parallel shared(n)
     {
         #pragma omp single
-        printf("fib(%d)=%d\n",n,fib(n));
+        {
+          double  t0=omp_get_wtime();
+            int result=fib(n);
+           double t1=omp_get_wtime();
+              printf("fib(%d)=%d\n",n,fib(n));
+              printf("time=%f sec\n",t1-t0);
+
+        }
 
     }
     return 0;
