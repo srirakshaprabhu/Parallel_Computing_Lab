@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
-
 #define MIN_SIZE 1000
 
 void merge(int arr[], int left, int mid, int right) {
